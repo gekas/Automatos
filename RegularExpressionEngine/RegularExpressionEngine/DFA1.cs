@@ -25,7 +25,7 @@ namespace RegularExpressionEngine
     {
         public List<C5.HashSet<state>> states = new List<C5.HashSet<state>>();
         public C5.HashSet<state> initial = new C5.HashSet<state>();
-        public C5.HashSet<state> final = new C5.HashSet<state>();
+        public List<C5.HashSet<state>> final = new List<C5.HashSet<state>>();
         public SortedArray<input> inputs = new SortedArray<input>();
         public Dictionary<C5.HashSet<state>, List<DFA_info>> transTable = new Dictionary<C5.HashSet<state>, List<DFA_info>>();
 

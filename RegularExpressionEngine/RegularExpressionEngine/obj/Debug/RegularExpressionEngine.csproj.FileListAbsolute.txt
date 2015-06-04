@@ -23,4 +23,3 @@ C:\Users\Евгений\Documents\Visual Studio 2013\Projects\RegularExpressionE
 C:\Users\Евгений\Documents\Visual Studio 2013\Projects\RegularExpressionEngine\RegularExpressionEngine\bin\Debug\RegularExpressionEngine.exe
 C:\Users\Евгений\Documents\Visual Studio 2013\Projects\RegularExpressionEngine\RegularExpressionEngine\bin\Debug\RegularExpressionEngine.pdb
 C:\Users\Евгений\Documents\Visual Studio 2013\Projects\RegularExpressionEngine\RegularExpressionEngine\bin\Debug\RegularExpressionEngine.exe.config
-C:\Users\Евгений\Documents\Visual Studio 2013\Projects\RegularExpressionEngine\RegularExpressionEngine\obj\Debug\RegularExpressionEngine.csprojResolveAssemblyReference.cache

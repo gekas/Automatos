@@ -35,8 +35,14 @@ namespace RegularExpressionEngine
                 }
 
             }
-                
-            
+
+            setFinishStates(nfa, dfa);
+        }
+
+        public void setFinishStates(NFA nfa, DFA1 dfa) {
+            foreach (C5.HashSet<state> st in dfa.states) {
+                if (st.Contains(nfa.final)) dfa.final.Add(st);
+            }
         }
 
         public void initialTransition(NFA nfa, DFA1 dfa) {
