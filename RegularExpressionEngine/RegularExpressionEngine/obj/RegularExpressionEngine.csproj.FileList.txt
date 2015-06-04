@@ -1,0 +1,8 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\RegularExpressionEngine.exe
+bin\Debug\RegularExpressionEngine.pdb
+obj\Debug\RegularExpressionEngine.exe
+obj\Debug\RegularExpressionEngine.pdb
+obj\Release\ResolveAssemblyReference.cache
+bin\Debug\C5.dll
+bin\Debug\C5.pdb
