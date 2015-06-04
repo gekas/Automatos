@@ -31,7 +31,7 @@ namespace RegularExpressionEngine
                     {
                         inputStates(nfa, dfa, st, dfa_inf, inp);
                     }
-                    if(dfa_inf.from.Count != 0 && dfa_inf.to.Count != 0) dfa.transTable.Add(dfa_inf);
+                    if(dfa_inf.to.Count != 0) dfa.transTable[line].Add(dfa_inf);
                 }
 
             }
@@ -44,6 +44,7 @@ namespace RegularExpressionEngine
             epsStates(nfa, dfa, nfa.initial, dfa_inf);
             dfa.initial = dfa_inf.to;
             dfa.states.Add(dfa.initial);
+            dfa.transTable.Add(dfa_inf.to, new SCG.List<DFA_info>());
         }
 
         public void epsStates(NFA nfa, DFA1 dfa, state st, DFA_info dfa_inf) {
@@ -75,8 +76,8 @@ namespace RegularExpressionEngine
         }
 
         private void checkStates(DFA1 dfa, DFA_info dfa_inf){   // Check an availibility of added states
-            if ((!ListContainsHashState(dfa.states, dfa_inf.from)) && dfa_inf.from.Count != 0) dfa.states.Add(dfa_inf.from);
-            if ((!ListContainsHashState(dfa.states, dfa_inf.to)) && dfa_inf.to.Count != 0) dfa.states.Add(dfa_inf.to); 
+           // if ((!ListContainsHashState(dfa.states, dfa_inf.from)) && dfa_inf.from.Count != 0) dfa.states.Add(dfa_inf.from);
+            if ((!ListContainsHashState(dfa.states, dfa_inf.to)) && dfa_inf.to.Count != 0) { dfa.states.Add(dfa_inf.to); dfa.transTable.Add(dfa_inf.to, new SCG.List<DFA_info>());}
         }
 
         private bool ListContainsHashState(SCG.List<HashSet<state>> lst, HashSet<state> State)

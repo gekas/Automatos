@@ -16,7 +16,7 @@
     <ErrorReportUrlHistory />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartArguments>RegularExpressionEngine "%28a|b%29%2a"  aabab</StartArguments>
+    <StartArguments>RegularExpressionEngine "%28%28a|b%29a%29%2a"  aabab</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <StartArguments>RegularExpressionEngine "(a|b)*abb" aaababb</StartArguments>
