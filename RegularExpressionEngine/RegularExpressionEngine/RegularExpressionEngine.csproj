@@ -64,9 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DFA.cs" />
     <Compile Include="DFA1.cs" />
+    <Compile Include="DFASimple.cs" />
+    <Compile Include="MinimizeDFA.cs" />
     <Compile Include="NFA.cs" />
+    <Compile Include="Options.cs" />
     <Compile Include="ParseTree.cs" />
     <Compile Include="RegexParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

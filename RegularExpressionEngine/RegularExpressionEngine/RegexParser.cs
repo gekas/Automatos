@@ -1,15 +1,4 @@
-﻿//
-//	Regular Expression Engine C# Sample Application
-//	2006, by Leniel Braz de Oliveira Macaferi & Wellington Magalhães Leite.
-//
-//  UBM's Computer Engineering - 7th term [http://www.ubm.br/]
-//  
-//  This program sample was developed and turned in as a term paper for Lab. of
-//  Compilers Construction. It was based on the source code provided by Eli Bendersky
-//  [http://eli.thegreenplace.net/] and is provided "as is" without warranty.
-//
-
-using System;
+﻿using System;
 using System.Text;
 using state = System.Int32;
 using input = System.Char;
@@ -17,7 +6,7 @@ using input = System.Char;
 namespace RegularExpressionEngine
 {
   /// <summary>
-  /// Implements a parser for a given regular expression.
+  ///   
   /// </summary>
   class RegexParser
   {
@@ -265,25 +254,24 @@ namespace RegularExpressionEngine
     }
 
     /// <summary>
-    /// The main entry point of the Console Application
+    ///     Точка входа
     /// </summary>
     /// <param name="args"></param>
     static void Main(string[] args)
     {
 
-        //RegularExpressionEngine "(l|e)*n?(i|e)el*" leniel
       if(args.Length != 3)
       {
         Console.WriteLine("Call with the regex as an argument.");
 
         Environment.Exit(1);
       }
-
+        
       RegexParser myRegexParser = new RegexParser();
 
       // Passing the regex to be preprocessed.
       myRegexParser.Init(args[1]);
-
+        Options.str = args[2];
       // Creating a parse tree with the preprocessed regex
       ParseTree parseTree = myRegexParser.Expr();
       
@@ -304,7 +292,12 @@ namespace RegularExpressionEngine
 
       nfa.Show();
 
-      SM sm = new SM(nfa);
+      SM sm = new SM();
+      DFA1 dfa = sm.translateNfaToDfa(nfa, new DFA1(nfa));
+      DFASimple dfas = new DFASimple(dfa);
+      MinimizeDFA dfam = new MinimizeDFA(dfas);
+      dfam.Show();
+
      // DFA dfa = SubsetMachine.SubsetConstruct(nfa);
 
       //dfa.Show();

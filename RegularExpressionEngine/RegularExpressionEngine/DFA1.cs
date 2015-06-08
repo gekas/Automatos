@@ -11,12 +11,17 @@ namespace RegularExpressionEngine
 {
     class DFA_info
     {
-      //  public C5.HashSet<state> from = new C5.HashSet<state>();
         public C5.HashSet<state> to = new C5.HashSet<state>();
         public input inp;
 
-        public DFA_info(C5.HashSet<state> from, input inp) {
+        public DFA_info(input inp) {
             this.inp = inp;
+        }
+
+        public DFA_info(input inp, C5.HashSet<state> to)
+        {
+            this.inp = inp;
+            this.to = to;
         }
 
         public DFA_info() { }
@@ -26,8 +31,11 @@ namespace RegularExpressionEngine
         public List<C5.HashSet<state>> states = new List<C5.HashSet<state>>();
         public C5.HashSet<state> initial = new C5.HashSet<state>();
         public List<C5.HashSet<state>> final = new List<C5.HashSet<state>>();
+        public state? halt = null;
         public SortedArray<input> inputs = new SortedArray<input>();
         public Dictionary<C5.HashSet<state>, List<DFA_info>> transTable = new Dictionary<C5.HashSet<state>, List<DFA_info>>();
+        public object[] statesArray;
+
 
         public DFA1(NFA nfa) {
             inputs = nfa.inputs;
